@@ -16,15 +16,15 @@ class Interface(QWidget):
         self.init_ui()
 
     def init_ui(self):
-        self.song_1 = QPushButton("Загрузить 1 песню")
-        self.pause = QPushButton("Пауза")
         self.play_it = QPushButton("Воспроизвести текущую")
+        self.pause = QPushButton("Пауза")
+        self.song_1 = QPushButton("Загрузить 1 песню")
         self.openf = QPushButton("Открыть папку с музыкой")
         self.resize(350, 500)
         h_box = QVBoxLayout()
-        h_box.addWidget(self.song_1)
         h_box.addWidget(self.play_it)
         h_box.addWidget(self.pause)
+        h_box.addWidget(self.song_1)
         h_box.addWidget(self.openf)
         v_box = QVBoxLayout()
         v_box.addLayout(h_box)
