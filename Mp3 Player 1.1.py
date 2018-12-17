@@ -23,8 +23,20 @@ class Player(QMainWindow):
         centralWidget = QWidget()
         centralWidget.setLayout(controlBar)
         self.setCentralWidget(centralWidget)
+        self.setObjectName('MainWidget')
+        self.setStyleSheet("""
+                    #MainWidget {
+                        background-color: #333;
+                    }
+                    .QLabel {
+                        color: #fff;
+                    }
+                    # QPushButton {
+            background - color: lightgreen;
+        border - style: solid;
+        }
+                """)
         self.resize(370, 620)
-
         self.show()
 
     def addControls(self):
@@ -115,9 +127,8 @@ class Player(QMainWindow):
             pass
 
     def regul(self):
-        if data_1 == None:
-            self.regulPlay = True
-            return self.regulPlay
+        self.regulPlay = True
+        return self.regulPlay
 
     def open_file(self):
         file = QFileDialog.getOpenFileName(self, "Open", os.getenv("HOME"))
